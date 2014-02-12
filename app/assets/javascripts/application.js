@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-// Loads all Bootstrap javascripts
 //= require bootstrap
-//= require turbolinks
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap
+//= require dataTables/extras/TableTools
+//= require dataTables/extras/ZeroClipboard
 //= require_tree .

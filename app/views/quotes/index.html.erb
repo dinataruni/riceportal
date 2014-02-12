@@ -1,0 +1,44 @@
+
+
+<h1> Rice and Grains Commodity Quotes
+</h1>
+
+<body>
+
+
+<table id="quotes" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Price</th>
+      <th>Commodity</th>
+      <th>Supplier</th>
+      <th>Details</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quotes.each do |quote| %>
+      <tr>
+        <td><%= quote.created_at.strftime("%m/%d/%Y") %></td>
+        <td><%= quote.price %></td>
+        <td><%= quote.commodity %></td>
+        <td><%= quote.supplier %></td>
+        <td><%= link_to 'More Details', quote %></td>
+        <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</body>
+
+<br>
+
+
+
+<%= link_to 'New Quote', new_quote_path %>
+

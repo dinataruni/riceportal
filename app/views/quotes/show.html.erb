@@ -1,0 +1,35 @@
+
+
+<p>
+  <strong>Price:</strong>
+  <%= @quote.price %>
+</p>
+
+<p>
+  <strong>Commodity:</strong>
+  <%= @quote.commodity %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @quote.supplier %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @quote.brand %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @quote.notes %>
+</p>
+
+<p>
+  <strong>Created At: </strong><%= @quote.created_at.strftime("%m/%d/%Y %H:%M%p") %></p>
+
+<p><strong>Updated At: </strong><%= @quote.updated_at.strftime("%m/%d/%Y %H:%M%p") %></p>
+
+
+<%= link_to 'Edit', edit_quote_path(@quote) %> |
+<%= link_to 'Back to Quotes', quotes_path %>
