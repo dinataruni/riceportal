@@ -2,7 +2,7 @@ $(document).ready( function () {
   $('#quotes').dataTable( {
      "sDom": "<'row-fluid'<'span6'T><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
     "oTableTools": {
-      "sSwfPath": "swf/copy_csv_xls_pdf.swf",
+      "sSwfPath": "copy_csv_xls_pdf.swf",
       "aButtons": [
         "copy",
         "print",

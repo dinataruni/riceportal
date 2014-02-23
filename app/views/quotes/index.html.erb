@@ -12,11 +12,10 @@
 
     <tr>
       <th>Date</th>
-      <th>Price</th>
       <th>Commodity</th>
+      <th>Price </th>
       <th>Supplier</th>
-      <th>Details</th>
-      <th></th>
+      <th>Purchased</th>
     </tr>
   </thead>
 
@@ -24,11 +23,10 @@
     <% @quotes.each do |quote| %>
       <tr>
         <td><%= quote.created_at.strftime("%m/%d/%Y") %></td>
+        <td><%= link_to quote.commodity, quote%></td>
         <td><%= quote.price %></td>
-        <td><%= quote.commodity %></td>
         <td><%= quote.supplier %></td>
-        <td><%= link_to 'More Details', quote %></td>
-        <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
+        <td><%= t quote.confirm.class %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,5 +40,5 @@
 
 
 
-<%= link_to 'New Quote', new_quote_path %>
+<%= link_to 'New Quote', new_quote_path, class: "btn btn-large btn-primary" %>
 

@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+main{
+  padding-top: 45px;}
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -7,23 +9,17 @@
   box-sizing: border-box;}
 
 .navbar {
-  background-color: #880000 ; /* fallback color, place your own */
-
-  /* Gradients for modern browsers, replace as you see fit */
-  background-image: -moz-linear-gradient(top, #980000 , #880000);
-  background-image: -ms-linear-gradient(top, #980000, #880000);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#980000), to(#880000));
-  background-image: -webkit-linear-gradient(top, #980000, #880000);
-  background-image: -o-linear-gradient(top, #980000, #880000);
-  background-image: linear-gradient(top, #980000, #880000);
-  background-repeat: repeat-x;
-
-  /* IE8-9 gradient filter */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#980000', endColorstr='#880000', GradientType=0);
+  background-color: #980000 ; 
+  border-bottom: #880000;
 }
 
-.navbar .nav > li > a {
-    color:  #ddd;
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar .nav > li > a:hover {
+    color:  white;
+    background-color: #880000;
 }
 
 #logo {
@@ -96,6 +92,63 @@ input {
 
 .dropdown-toggle:active, .open .dropdown-toggle {background:#880000 !important; }
 
-a:hover, a:focus {
+/*a:hover, a:focus {
     background-color: #880000 !important;
+}*/
+
+/* User sign in and sign forms. */
+.border-form-div {
+  width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+
+.checkbox {
+  display: block;
+  min-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  vertical-align: center; 
+ }
+
+  .checkbox label {
+    display: inline;
+    margin-bottom: 0;
+    font-weight: bold;
+    cursor: pointer; 
+    margin-left: -160px;
+    vertical-align: center;}
+
+.dropdown-menu {
+  border: 2px solid (#980000); }
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+text-decoration: none;
+color: white;
+background-color: #980000; }
+
+.dropdown-menu > li > a {
+display: block;
+padding: 3px 20px;
+clear: both;
+font-weight: normal;
+line-height: 1.428571429;
+color: white;
+white-space: nowrap; 
+background-color: #880000; 
+border: #880000;}
+
+.navbar-nav > li > .dropdown-menu {
+  background-color: #880000;
+  border: #880000;
 }

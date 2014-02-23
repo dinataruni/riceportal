@@ -31,7 +31,7 @@ end
 
 
 gem 'sass-rails', '4.0.1'
-gem 'bootstrap-sass', '~> 3.0.2.1'
+gem 'bootstrap-sass'
 gem 'jquery-ui-rails'
 gem 'lodash-rails'
 

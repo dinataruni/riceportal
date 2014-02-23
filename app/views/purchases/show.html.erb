@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quote:</strong>
+  <%= @purchase.quote_id %>
+</p>
+
+<p>
+  <strong>Commodity:</strong>
+  <%= @purchase.commodity %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @purchase.supplier %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @purchase.price %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @purchase.brand %>
+</p>
+
+<p>
+  <strong>Pack size:</strong>
+  <%= @purchase.pack_size %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @purchase.volume %>
+</p>
+
+<p>
+  <strong>Shipment details:</strong>
+  <%= @purchase.shipment_details %>
+</p>
+
+<p>
+  <strong>Po number:</strong>
+  <%= @purchase.po_number %>
+</p>
+
+<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
+<%= link_to 'Back', purchases_path %>

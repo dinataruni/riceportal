@@ -1,0 +1,39 @@
+<%= form_for(@rfq) do |f| %>
+  <% if @rfq.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rfq.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% @rfq.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :commodity %><br>
+    <%= f.text_field :commodity %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :pack_size %><br>
+    <%= f.text_field :pack_size %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %><br>
+    <%= f.text_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :shipment %><br>
+    <%= f.text_area :shipment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <%= f.hidden_field :user_id %> 
+<% end %>

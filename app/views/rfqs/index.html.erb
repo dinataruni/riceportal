@@ -1,0 +1,31 @@
+
+
+<h1>Request for Commodity Quotes</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Commodity</th>
+      <th>Brand</th>
+      <th>Pack Size</th>
+      <th>Volume</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rfqs.each do |rfq| %>
+      <tr>
+        <td><%= rfq.created_at.strftime("%m/%d/%Y") %></td>
+        <td><%= link_to rfq.commodity, rfq %></td>
+        <td><%= rfq.brand %></td>
+        <td><%= rfq.pack_size %></td>
+        <td><%= rfq.volume %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Request', new_rfq_path, class: "btn btn-large btn-primary" %>

@@ -1,0 +1,42 @@
+<h1> RFQ Details </h1>
+<p>
+  <strong>Commodity:</strong>
+  <%= @rfq.commodity %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @rfq.brand %>
+</p>
+
+<p>
+  <strong>Pack size:</strong>
+  <%= @rfq.pack_size %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @rfq.volume %>
+</p>
+
+<p>
+  <strong>Shipment:</strong>
+  <%= @rfq.shipment %>
+</p>
+
+<p>
+  <strong>Created At: </strong><%= @rfq.created_at.strftime("%m/%d/%Y %H:%M%p") %></p>
+
+<p>
+  <strong>Created By: </strong><%= @rfq.user_name %></p>
+
+<div class="btn-group">
+ 
+<%= link_to 'Edit', edit_rfq_path(@rfq), class: "btn btn-default" %> 
+<%= link_to 'New Request', new_rfq_path, class: "btn btn-default" %>
+<%= link_to 'Add this Quote', "#{@rfq.id}/create_quote", method: :create_quote, data: {confirm: 'Are you sure you want to close this request and record a quote?'}, class: "btn btn-default" %>
+</div>
+
+
+<br><br>
+<%= link_to '<< Back to Requests', rfqs_path %> 
