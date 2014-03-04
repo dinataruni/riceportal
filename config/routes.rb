@@ -1,16 +1,26 @@
 Riceportal::Application.routes.draw do
    root  'static_pages#home'
-   match '/help',    to: 'static_pages#help',    via: 'get'
+   match '/help',    to: 'static_pages#help',    via: 'get' do
+      resources :feature_requests
+    end
+
    match '/about',   to: 'static_pages#about',   via: 'get'
 
    devise_for :users
- 
-   resources :purchases
+
+
+   resources :purchases do
+    resources :comments
+   end
+   
    resources :quotes do
     post :create_purchase
-  end
+    resources :comments
+   end
+
    resources :rfqs do
     post :create_quote
+    resources :comments
    end
 
   # The priority is based upon order of creation: first created -> highest priority.

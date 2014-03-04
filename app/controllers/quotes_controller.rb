@@ -10,6 +10,9 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.json
   def show
+    @commentable = @quote
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   # GET /quotes/new

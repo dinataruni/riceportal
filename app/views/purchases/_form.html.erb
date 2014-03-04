@@ -1,3 +1,4 @@
+<div class = "well">
 <%= form_for(@purchase) do |f| %>
   <% if @purchase.errors.any? %>
     <div id="error_explanation">
@@ -12,8 +13,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :quote_id %><br>
-    <%= f.number_field :quote_id %>
+    <%= f.label :po_number %><br>
+    <%= f.text_field :po_number %>
   </div>
   <div class="field">
     <%= f.label :commodity %><br>
@@ -43,10 +44,7 @@
     <%= f.label :shipment %><br>
     <%= f.text_field :shipment %>
   </div>
-  <div class="field">
-    <%= f.label :po_number %><br>
-    <%= f.text_field :po_number %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

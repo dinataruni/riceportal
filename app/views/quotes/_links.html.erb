@@ -1,0 +1,8 @@
+<div class="btn-group">
+ 
+<%= link_to_unless(@quote.confirm?, 'Edit', edit_quote_path(@quote), class: "btn btn-default") do |p|
+ link_to('Cannot Edit', '#', class: "btn btn-default disabled") end %>
+<%= link_to_unless(@quote.confirm?, 'Confirm Purchase', "#{@quote.id}/create_purchase", method: :create_purchase, data: {confirm: 'Are you sure you want to confirm this quote and record a purchase?'}, class: "btn btn-default") do |p|
+    link_to('Already Confirmed', '#', class: "btn btn-default disabled") end %>
+ <%= link_to 'New Quote', new_quote_path, class: "btn btn-default" %>
+</div>

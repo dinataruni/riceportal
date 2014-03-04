@@ -1,4 +1,8 @@
+<div class="show-elements">
+<%= link_to '<< Back to RFQ Index', rfqs_path %> 
+
 <h1> RFQ Details </h1>
+<div class = "well"> 
 <p>
   <strong>Commodity:</strong>
   <%= @rfq.commodity %>
@@ -30,13 +34,20 @@
 <p>
   <strong>Created By: </strong><%= @rfq.user_name %></p>
 
-<div class="btn-group">
- 
-<%= link_to 'Edit', edit_rfq_path(@rfq), class: "btn btn-default" %> 
-<%= link_to 'New Request', new_rfq_path, class: "btn btn-default" %>
-<%= link_to 'Add this Quote', "#{@rfq.id}/create_quote", method: :create_quote, data: {confirm: 'Are you sure you want to close this request and record a quote?'}, class: "btn btn-default" %>
+<%= render 'links' %>
+
 </div>
 
 
-<br><br>
-<%= link_to '<< Back to Requests', rfqs_path %> 
+<%= render "comments/comments" %>
+<br>
+<%= render "comments/form" %>
+
+</div>
+
+
+
+
+<%= link_to '<< Back to RFQ Index', rfqs_path %> 
+
+</div>

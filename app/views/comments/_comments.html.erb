@@ -1,0 +1,10 @@
+<h4>Comments</h4>
+
+<div class = "well well-sm">
+<% @comments.each do |comment| %>
+    <font color = "grey"><%= comment.created_at.strftime("%m/%d/%Y") %></font>
+    <strong><%= comment.user_name %></strong>:
+    <%= comment.body %> 
+    <br>
+<% end %>
+

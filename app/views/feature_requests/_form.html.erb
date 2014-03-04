@@ -1,0 +1,12 @@
+
+<%= form_for FeatureRequest.new do |f| %>
+
+  <div class="field">
+    <%= f.label :request %><br>
+    <%= f.text_field :request %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Request", action: 'create', :url => 'help' %>
+  </div>
+<% end %>

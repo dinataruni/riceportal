@@ -1,0 +1,6 @@
+<div class="btn-group">
+ 
+<%= link_to 'Edit', edit_rfq_path(@rfq), class: "btn btn-default" %> 
+<%= link_to 'New Request', new_rfq_path, class: "btn btn-default" %>
+<%= link_to 'Add this Quote', "#{@rfq.id}/create_quote", method: :create_quote, data: {confirm: 'Are you sure you want to close this request and record a quote?'}, class: "btn btn-default" %>
+</div>

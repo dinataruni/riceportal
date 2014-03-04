@@ -21,7 +21,7 @@
                 <li><%= link_to "Request Quote", rfqs_path %></li>
                 <li><%= link_to "Quotes", quotes_path %></li>
                 <li><%= link_to "Purchases", purchases_path %></li>
-                <li><%= link_to "Freight", '#' %></li>
+                <li class="disabled"><%= link_to "Freight", '#' %></li>
               </ul>
         </li>
         <li id="fat-menu" class="dropdown">
@@ -29,9 +29,9 @@
                 Resources <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Price Sheets", '#' %></li>
-                <li><%= link_to "Sales Sheets", '#' %></li>
-                <li><%= link_to "Photos", '#' %></li>
+                <li class = "disabled"><%= link_to "Price Sheets", '#', class: 'disabled' %></li>
+                <li class = "disabled"><%= link_to "Sales Sheets", '#', class: 'disabled' %></li>
+                <li class = "disabled"><%= link_to "Photos", '#', class: 'disabled' %></li>
               </ul>
         </li>
         <li><%= link_to "Help", help_path %></li>

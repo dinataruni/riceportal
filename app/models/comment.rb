@@ -1,7 +1,6 @@
-class Rfq < ActiveRecord::Base
+class Comment < ActiveRecord::Base
   belongs_to :user
-  has_one :quote
-  has_many :comments, as: :commentable
+  belongs_to :commentable, polymorphic: true
   validates :user_id, presence: true
   delegate :name, :email, to: :user, :prefix => true
 end

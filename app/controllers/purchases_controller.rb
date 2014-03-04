@@ -11,6 +11,9 @@ class PurchasesController < ApplicationController
   # GET /purchases/1
   # GET /purchases/1.json
   def show
+    @commentable = @purchase
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   # GET /purchases/new

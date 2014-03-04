@@ -11,6 +11,9 @@ class RfqsController < ApplicationController
   # GET /rfqs/1
   # GET /rfqs/1.json
   def show
+    @commentable = @rfq
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   # GET /rfqs/new

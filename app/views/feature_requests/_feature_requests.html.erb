@@ -1,0 +1,11 @@
+
+<h3> Feature Requests </h3>
+
+<i>Please submit any feature requests here.  Vote for the features you want to see implemented.  </i>
+<div class = "well">
+<% @feature_requests.each do |fr| %>
+    <font color = "grey"><%= fr.created_at.strftime("%m/%d/%Y") %></font>
+    <strong><%= fr.user_name %></strong>:
+    <%= fr.request %> 
+    <br>
+<% end %>

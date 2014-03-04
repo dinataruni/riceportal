@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :quotes
   has_many :rfqs
   has_many :purchases
+  has_many :comments
 end

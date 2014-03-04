@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="show-elements">
 
+<%= link_to '<< Back to Purchase Index', purchases_path %>
+<h1> Purchase Details </h1>
+<div class = "well">
 <p>
-  <strong>Quote:</strong>
-  <%= @purchase.quote_id %>
+  <strong>Po number:</strong>
+  <%= @purchase.po_number %>
 </p>
 
 <p>
@@ -37,13 +40,16 @@
 
 <p>
   <strong>Shipment details:</strong>
-  <%= @purchase.shipment_details %>
+  <%= @purchase.shipment %>
 </p>
+<%= render 'links' %>
 
-<p>
-  <strong>Po number:</strong>
-  <%= @purchase.po_number %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
-<%= link_to 'Back', purchases_path %>
+<%= render "comments/comments" %>
+<br>
+<%= render "comments/form" %>
+
+</div>
+
+<%= link_to '<< Back to Purchase Index', purchases_path %>

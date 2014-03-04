@@ -2,9 +2,11 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def help
+  def new
   end
 
-  def about
+  def help
+    @feature_requests = FeatureRequest.all
+    @feature_request = FeatureRequest.new
   end
 end
