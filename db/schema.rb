@@ -13,24 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140301182234) do
 
-  create_table "admins", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-
   create_table "comments", force: true do |t|
     t.text     "body"
     t.integer  "commentable_id"
@@ -40,8 +22,8 @@ ActiveRecord::Schema.define(version: 20140301182234) do
     t.integer  "user_id"
   end
 
-  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "feature_requests", force: true do |t|
     t.text     "request"
@@ -50,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140301182234) do
     t.integer  "user_id"
   end
 
-  add_index "feature_requests", ["user_id"], name: "index_feature_requests_on_user_id"
+  add_index "feature_requests", ["user_id"], name: "index_feature_requests_on_user_id", using: :btree
 
   create_table "purchases", force: true do |t|
     t.integer  "quote_id"
@@ -67,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140301182234) do
     t.integer  "user_id"
   end
 
-  add_index "purchases", ["user_id"], name: "index_purchases_on_user_id"
+  add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
 
   create_table "quotes", force: true do |t|
     t.string   "price"
@@ -81,11 +63,10 @@ ActiveRecord::Schema.define(version: 20140301182234) do
     t.integer  "user_id"
     t.string   "volume"
     t.string   "pack_size"
-    t.boolean  "purchase",   default: false
     t.boolean  "confirm",    default: false
   end
 
-  add_index "quotes", ["user_id"], name: "index_quotes_on_user_id"
+  add_index "quotes", ["user_id"], name: "index_quotes_on_user_id", using: :btree
 
   create_table "rfqs", force: true do |t|
     t.string   "commodity"
@@ -99,7 +80,7 @@ ActiveRecord::Schema.define(version: 20140301182234) do
     t.boolean  "status"
   end
 
-  add_index "rfqs", ["user_id"], name: "index_rfqs_on_user_id"
+  add_index "rfqs", ["user_id"], name: "index_rfqs_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -117,7 +98,7 @@ ActiveRecord::Schema.define(version: 20140301182234) do
     t.string   "name"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

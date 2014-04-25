@@ -4,7 +4,7 @@ gem 'rails', '4.0.1'
 gem 'devise', '3.0.0.rc'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
+  gem 'pg', '0.15.1'
   gem 'rspec-rails', '2.13.1'
 end
 
@@ -38,3 +38,4 @@ gem 'lodash-rails'
 gem 'will_paginate'
 
 gem 'jquery-datatables-rails'
+gem 'therubyracer', '0.11.4'

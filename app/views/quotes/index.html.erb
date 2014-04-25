@@ -14,6 +14,7 @@
       <th>Date</th>
       <th>Commodity</th>
       <th>Price </th>
+      <th>Pack Size</th>
       <th>Supplier</th>
       <th>Purchased</th>
     </tr>
@@ -25,7 +26,8 @@
         <td><%= quote.created_at.strftime("%m/%d/%Y") %></td>
         <td><%= link_to quote.commodity, quote%></td>
         <td><%= quote.price %></td>
-        <td><%= quote.supplier %></td>
+        <td><%= quote.pack_size %></td>
+	<td><%= quote.supplier %></td>
         <td><%= t quote.confirm.class %></td>
       </tr>
     <% end %>
